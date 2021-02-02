@@ -149,8 +149,37 @@ object Functions_InDepth {
 	 value of x for which f(x) is the same as x
 	 */
 	 
-	 def fixedPoint(f:Double=>Double, x:Double)={
+	 def fixedPoint(f:Double=>Double, guess:Double = 1.00)={
 	 	val errFP = 0.0001
-	 	def isOK(g:Double){}
-	 }                                        //> fixedPoint: (f: Double => Double, x: Double)Unit
+	 	def isOK(g:Double, next:Double)=math.abs((f(g)-g)/g)<=errFP
+	 	def inner(g:Double):Double = {
+	 		val next = f(g)
+	 		if(isOK(g,next)) g
+	 		else inner(next)
+	 		}
+	 		inner(guess)
+	 }                                        //> fixedPoint: (f: Double => Double, guess: Double)Double
+
+	fixedPoint(x => 1 + x/2)                  //> res12: Double = 1.999755859375
+	
+	/*
+	For finding the SQRT : y*y = x
+	y = x/y. the fixed point will be sqrt(x)
+	*/
+	def sqrt1(x:Double) = {
+		fixedPoint(y=>x/y)
+	}                                         //> sqrt1: (x: Double)Double
+	
+	/*
+	HASKEL CURRY invented currying
+	This curried version is needed to partially apply parameters
+	So we can use this in the existing fixed point computations
+	*/
+	def averageDamp1(f:Double=>Double)(x:Double) = (f(x)+x)/2.0
+                                                  //> averageDamp1: (f: Double => Double)(x: Double)Double
+	
+	def sqrt2(x:Double) = {
+		fixedPoint(averageDamp1(y=>x/y))
+	}                                         //> sqrt2: (x: Double)Double
+	sqrt2(2)                                  //> res13: Double = 1.4142156862745097
 }

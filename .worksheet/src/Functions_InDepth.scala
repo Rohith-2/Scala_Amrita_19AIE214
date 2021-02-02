@@ -138,15 +138,43 @@ object Functions_InDepth {;import org.scalaide.worksheet.runtime.library.Workshe
 	 val j:(Int,Int) => Int = (a,b) => a*b;System.out.println("""j  : (Int, Int) => Int = """ + $show(j ));$skip(9); val res$11 = 
 	 j(5,6);System.out.println("""res11: Int = """ + $show(res$11));$skip(23); 
 	 
-	 val g = List(i,i);System.out.println("""g  : List[Int => Int] = """ + $show(g ));$skip(172); 
+	 val g = List(i,i);System.out.println("""g  : List[Int => Int] = """ + $show(g ));$skip(343); 
 	 
 	 /*
 	 f(x) = 5x-6
 	 value of x for which f(x) is the same as x
 	 */
 	 
-	 def fixedPoint(f:Double=>Double, x:Double)={
+	 def fixedPoint(f:Double=>Double, guess:Double = 1.00)={
 	 	val errFP = 0.0001
-	 	def isOK(g:Double){}
-	 };System.out.println("""fixedPoint: (f: Double => Double, x: Double)Unit""")}
+	 	def isOK(g:Double, next:Double)=math.abs((f(g)-g)/g)<=errFP
+	 	def inner(g:Double):Double = {
+	 		val next = f(g)
+	 		if(isOK(g,next)) g
+	 		else inner(next)
+	 		}
+	 		inner(guess)
+	 };System.out.println("""fixedPoint: (f: Double => Double, guess: Double)Double""");$skip(27); val res$12 = 
+
+	fixedPoint(x => 1 + x/2);System.out.println("""res12: Double = """ + $show(res$12));$skip(133); 
+	
+	/*
+	For finding the SQRT : y*y = x
+	y = x/y. the fixed point will be sqrt(x)
+	*/
+	def sqrt1(x:Double) = {
+		fixedPoint(y=>x/y)
+	};System.out.println("""sqrt1: (x: Double)Double""");$skip(226); 
+	
+	/*
+	HASKEL CURRY invented currying
+	This curried version is needed to partially apply parameters
+	So we can use this in the existing fixed point computations
+	*/
+	def averageDamp1(f:Double=>Double)(x:Double) = (f(x)+x)/2.0;System.out.println("""averageDamp1: (f: Double => Double)(x: Double)Double""");$skip(65); 
+	
+	def sqrt2(x:Double) = {
+		fixedPoint(averageDamp1(y=>x/y))
+	};System.out.println("""sqrt2: (x: Double)Double""");$skip(10); val res$13 = 
+	sqrt2(2);System.out.println("""res13: Double = """ + $show(res$13))}
 }
