@@ -109,11 +109,40 @@ object HigherOrderFunctions {
                                                   //| t) => Int
   val sumints = mapreduce2(x=>x,(u,v)=>u+v,0)     //> sumints  : (Int, Int) => Int = HigherOrderFunctions$$$Lambda$25/1908316405@
                                                   //| 6fadae5d
-  sumints(1,10)                                   //> res10: Int = 55
-  
-  val sumSqints = mapreduce2(x=>x*x,(u,v)=>u+v,0) //> sumSqints  : (Int, Int) => Int = HigherOrderFunctions$$$Lambda$25/190831640
+	val sumSqints = mapreduce2(x=>x*x,(u,v)=>u+v,0)
+                                                  //> sumSqints  : (Int, Int) => Int = HigherOrderFunctions$$$Lambda$25/190831640
                                                   //| 5@2812cbfa
+  sumints(1,10)                                   //> res10: Int = 55
   sumSqints(1,10)                                 //> res11: Int = 385
+
+  //Self-Attempt : ------------------------
+
+  var a = List("a", "b", "c", "d")                //> a  : List[String] = List(a, b, c, d)
+
+  def conCat(
+    map: String => String = x => x + x,
+    reduce: (String, String) => String = (a, b) => a + b,
+    iden: String = "")
+    (x: List[String]) = {
+    
+    def iter(x: List[String], acc: String): String = {
+      if (x == Nil) acc;
+      else iter(x.tail, reduce(acc, map(x.head)))
+    }
+    
+    iter(x, iden)
+  }                                               //> conCat: (map: String => String, reduce: (String, String) => String, iden: S
+                                                  //| tring)(x: List[String])String
   
+  conCat(x => x * 2)(a)                           //> res12: String = aabbccdd
+  //---------------------------------------
+  
+  /*
+  Call by name is a functional parameter
+  Null => <Some_Type>
+  Function 0 - depends on the number of parameters
+  x is not a variable but assume it to be some function
+  */
+  def fn(x: =>Int) = x                            //> fn: (x: => Int)Int
 
 }

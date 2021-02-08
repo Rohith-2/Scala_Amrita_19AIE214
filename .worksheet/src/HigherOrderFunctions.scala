@@ -101,11 +101,38 @@ object HigherOrderFunctions {;import org.scalaide.worksheet.runtime.library.Work
     }
     return fn
   };System.out.println("""mapreduce2: (map: Int => Int, reduce: (Int, Int) => Int, iden: Int)(Int, Int) => Int""");$skip(46); 
-  val sumints = mapreduce2(x=>x,(u,v)=>u+v,0);System.out.println("""sumints  : (Int, Int) => Int = """ + $show(sumints ));$skip(16); val res$10 = 
-  sumints(1,10);System.out.println("""res10: Int = """ + $show(res$10));$skip(53); 
+  val sumints = mapreduce2(x=>x,(u,v)=>u+v,0);System.out.println("""sumints  : (Int, Int) => Int = """ + $show(sumints ));$skip(49); 
+	val sumSqints = mapreduce2(x=>x*x,(u,v)=>u+v,0);System.out.println("""sumSqints  : (Int, Int) => Int = """ + $show(sumSqints ));$skip(16); val res$10 = 
+  sumints(1,10);System.out.println("""res10: Int = """ + $show(res$10));$skip(18); val res$11 = 
+  sumSqints(1,10);System.out.println("""res11: Int = """ + $show(res$11));$skip(81); 
+
+  //Self-Attempt : ------------------------
+
+  var a = List("a", "b", "c", "d");System.out.println("""a  : List[String] = """ + $show(a ));$skip(330); 
+
+  def conCat(
+    map: String => String = x => x + x,
+    reduce: (String, String) => String = (a, b) => a + b,
+    iden: String = "")
+    (x: List[String]) = {
+    
+    def iter(x: List[String], acc: String): String = {
+      if (x == Nil) acc;
+      else iter(x.tail, reduce(acc, map(x.head)))
+    }
+    
+    iter(x, iden)
+  };System.out.println("""conCat: (map: String => String, reduce: (String, String) => String, iden: String)(x: List[String])String""");$skip(27); val res$12 = 
   
-  val sumSqints = mapreduce2(x=>x*x,(u,v)=>u+v,0);System.out.println("""sumSqints  : (Int, Int) => Int = """ + $show(sumSqints ));$skip(18); val res$11 = 
-  sumSqints(1,10);System.out.println("""res11: Int = """ + $show(res$11))}
+  conCat(x => x * 2)(a);System.out.println("""res12: String = """ + $show(res$12));$skip(250); 
+  //---------------------------------------
   
+  /*
+  Call by name is a functional parameter
+  Null => <Some_Type>
+  Function 0 - depends on the number of parameters
+  x is not a variable but assume it to be some function
+  */
+  def fn(x: =>Int) = x;System.out.println("""fn: (x: => Int)Int""")}
 
 }
