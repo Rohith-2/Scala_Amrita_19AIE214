@@ -115,6 +115,15 @@ object HigherOrderFunctions {
   sumints(1,10)                                   //> res10: Int = 55
   sumSqints(1,10)                                 //> res11: Int = 385
 
+	val factorial :Int =>Int =  mapreduce2(x=>x,(u,v)=>u*v,1)(1,_)
+                                                  //> factorial  : Int => Int = HigherOrderFunctions$$$Lambda$28/1349414238@96532
+                                                  //| d6
+	factorial(3)                              //> res12: Int = 6
+	
+	val sum0: (Int=>Int,Int,Int)=>Int =  mapreduce2(_,(u,v)=>u+v,0)(_,_)
+                                                  //> sum0  : (Int => Int, Int, Int) => Int = HigherOrderFunctions$$$Lambda$31/90
+                                                  //| 5544614@7f690630
+	
   //Self-Attempt : ------------------------
 
   var a = List("a", "b", "c", "d")                //> a  : List[String] = List(a, b, c, d)
@@ -125,16 +134,17 @@ object HigherOrderFunctions {
     iden: String = "")
     (x: List[String]) = {
     
-    def iter(x: List[String], acc: String): String = {
-      if (x == Nil) acc;
-      else iter(x.tail, reduce(acc, map(x.head)))
+    def iter(x: List[String], acc: String): String = x match {
+      case  Nil => acc;
+      case  xs::y => iter(y, reduce(acc, map(xs)))
     }
     
     iter(x, iden)
   }                                               //> conCat: (map: String => String, reduce: (String, String) => String, iden: S
                                                   //| tring)(x: List[String])String
   
-  conCat(x => x * 2)(a)                           //> res12: String = aabbccdd
+  conCat(x => x * 2)(a)                           //> res13: String = aabbccdd
+  
   //---------------------------------------
   
   /*

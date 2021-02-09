@@ -104,11 +104,16 @@ object HigherOrderFunctions {;import org.scalaide.worksheet.runtime.library.Work
   val sumints = mapreduce2(x=>x,(u,v)=>u+v,0);System.out.println("""sumints  : (Int, Int) => Int = """ + $show(sumints ));$skip(49); 
 	val sumSqints = mapreduce2(x=>x*x,(u,v)=>u+v,0);System.out.println("""sumSqints  : (Int, Int) => Int = """ + $show(sumSqints ));$skip(16); val res$10 = 
   sumints(1,10);System.out.println("""res10: Int = """ + $show(res$10));$skip(18); val res$11 = 
-  sumSqints(1,10);System.out.println("""res11: Int = """ + $show(res$11));$skip(81); 
+  sumSqints(1,10);System.out.println("""res11: Int = """ + $show(res$11));$skip(65); 
 
+	val factorial :Int =>Int =  mapreduce2(x=>x,(u,v)=>u*v,1)(1,_);System.out.println("""factorial  : Int => Int = """ + $show(factorial ));$skip(14); val res$12 = 
+	factorial(3);System.out.println("""res12: Int = """ + $show(res$12));$skip(72); 
+	
+	val sum0: (Int=>Int,Int,Int)=>Int =  mapreduce2(_,(u,v)=>u+v,0)(_,_);System.out.println("""sum0  : (Int => Int, Int, Int) => Int = """ + $show(sum0 ));$skip(82); 
+	
   //Self-Attempt : ------------------------
 
-  var a = List("a", "b", "c", "d");System.out.println("""a  : List[String] = """ + $show(a ));$skip(330); 
+  var a = List("a", "b", "c", "d");System.out.println("""a  : List[String] = """ + $show(a ));$skip(338); 
 
   def conCat(
     map: String => String = x => x + x,
@@ -116,15 +121,16 @@ object HigherOrderFunctions {;import org.scalaide.worksheet.runtime.library.Work
     iden: String = "")
     (x: List[String]) = {
     
-    def iter(x: List[String], acc: String): String = {
-      if (x == Nil) acc;
-      else iter(x.tail, reduce(acc, map(x.head)))
+    def iter(x: List[String], acc: String): String = x match {
+      case  Nil => acc;
+      case  xs::y => iter(y, reduce(acc, map(xs)))
     }
     
     iter(x, iden)
-  };System.out.println("""conCat: (map: String => String, reduce: (String, String) => String, iden: String)(x: List[String])String""");$skip(27); val res$12 = 
+  };System.out.println("""conCat: (map: String => String, reduce: (String, String) => String, iden: String)(x: List[String])String""");$skip(27); val res$13 = 
   
-  conCat(x => x * 2)(a);System.out.println("""res12: String = """ + $show(res$12));$skip(250); 
+  conCat(x => x * 2)(a);System.out.println("""res13: String = """ + $show(res$13));$skip(253); 
+  
   //---------------------------------------
   
   /*
