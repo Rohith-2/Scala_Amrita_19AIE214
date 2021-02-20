@@ -6,6 +6,7 @@
         <entry key="xml" value="XML" />
       </map>
     </option>
+    <option name="scFileMode" value="Ammonite" />
     <option name="useEclipseCompatibility" value="true" />
   </component>
 </project>

@@ -2,7 +2,7 @@ object ListHoF {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
   val l = List(1,2,3,4,5,6,7,8,9);System.out.println("""l  : List[Int] = """ + $show(l ));$skip(16); 
   val l0 = 0::l;System.out.println("""l0  : List[Int] = """ + $show(l0 ));$skip(193); val res$0 = 
   /*
-  	cons operstor '::'
+  	cons operator '::'
   	
   	All Operators are functions
   	the operater symbol is the function name
@@ -113,5 +113,4 @@ object ListHoF {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
   };System.out.println("""reduce0: (l0: List[Int], r: (Int, Int) => Int, acc: Int)Int""");$skip(19); val res$12 = 
   reduce0(l,_+_,0);System.out.println("""res12: Int = """ + $show(res$12))}
   
-
 }
