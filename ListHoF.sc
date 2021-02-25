@@ -115,5 +115,7 @@ object ListHoF {
   }                                               //> reduce0: (l0: List[Int], r: (Int, Int) => Int, acc: Int)Int
   reduce0(l,_+_,0)                                //> res12: Int = 45
   
-                                           //> res15: Int = 3628800
+  def index(a:List[Int])={                 //> res15: Int = 3628800
+  	
+  }
 }
