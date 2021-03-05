@@ -1,4 +1,5 @@
-object Quiz {
+object Fold {
+
 //InBuilt Method
 val o = List(1,2,3,4)                             //> o  : List[Int] = List(1, 2, 3, 4)
 o.foldLeft(100)(_-_)                              //> res0: Int = 90
