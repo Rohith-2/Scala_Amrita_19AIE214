@@ -1,0 +1,59 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(;Test/compile; collectAnalyses, None, Some(CommandSource(network-1)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing"})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Done"})[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(Test/compile, None, Some(CommandSource(network-1)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing"})[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / compile[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@7b4b8199, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating [0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"Updating "})[0m
+[0m[[0m[0minfo[0m] [0m[0mResolved  dependencies[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"Resolved  dependencies"})[0m
+[0m[[0m[33mwarn[0m] [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":2,"message":"\n\tNote: Unresolved dependencies path:"})[0m
+[0m[[0m[31merror[0m] [0m[0msbt.librarymanagement.ResolveException: Error downloading org.apache.spark:spark-sql_2.12:3.1.1-preview2[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:258)[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:227)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.Either$LeftProjection.map(Either.scala:573)[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:227)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:53)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:103)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:73)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.control.Exception$Catch.apply(Exception.scala:228)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:97)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:219)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:130)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Classpaths$.$anonfun$updateTask0$5(Defaults.scala:3486)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(Transform.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:64)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:745)[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"sbt.librarymanagement.ResolveException: Error downloading org.apache.spark:spark-sql_2.12:3.1.1-preview2\n  Not found\n  Not found\n  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml\n  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom\n\tat lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:258)\n\tat lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:227)\n\tat scala.util.Either$LeftProjection.map(Either.scala:573)\n\tat lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:227)\n\tat sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)\n\tat sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:53)\n\tat sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:103)\n\tat sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:73)\n\tat sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:116)\n\tat scala.util.control.Exception$Catch.apply(Exception.scala:228)\n\tat sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:116)\n\tat sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:97)\n\tat sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:219)\n\tat sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:130)\n\tat sbt.Classpaths$.$anonfun$updateTask0$5(Defaults.scala:3486)\n\tat scala.Function1.$anonfun$compose$1(Function1.scala:49)\n\tat sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)\n\tat sbt.std.Transform$$anon$4.work(Transform.scala:68)\n\tat sbt.Execute.$anonfun$submit$2(Execute.scala:282)\n\tat sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)\n\tat sbt.Execute.work(Execute.scala:291)\n\tat sbt.Execute.$anonfun$submit$1(Execute.scala:282)\n\tat sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)\n\tat sbt.CompletionService$$anon$2.call(CompletionService.scala:64)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)"})[0m
+[0m[[0m[31merror[0m] [0m[0m([31mupdate[0m) sbt.librarymanagement.ResolveException: Error downloading org.apache.spark:spark-sql_2.12:3.1.1-preview2[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"(\u001b[31mupdate\u001b[0m) sbt.librarymanagement.ResolveException: Error downloading org.apache.spark:spark-sql_2.12:3.1.1-preview2\n  Not found\n  Not found\n  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml\n  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom"})[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed 23 Mar, 2021 6:25:17 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Done"})[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

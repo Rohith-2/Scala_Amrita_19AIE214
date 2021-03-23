@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/Documents/College/Semester 4/BigData_Analysis/Class1.scala:5:5: wordRdd is already defined as value wordRdd[0m
+[0m[[0m[31merror[0m] [0m[0mval wordRdd = wikiRdd.flatMap{l=> l.split("\\s+")}[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/Documents/College/Semester 4/BigData_Analysis/Class1.scala:2:15: not found: value sc[0m
+[0m[[0m[31merror[0m] [0m[0mval wikiRdd = sc.textFile("wikisample.txt")[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/Documents/College/Semester 4/BigData_Analysis/Class1.scala:9:1: not found: value string[0m
+[0m[[0m[31merror[0m] [0m[0mstring.replaceAll("[^A-Za-z\\s]*","")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/Documents/College/Semester 4/BigData_Analysis/Class1.scala:10:11: not found: value sc[0m
+[0m[[0m[31merror[0m] [0m[0mval cat = sc.textFile("wikisample.txt").map(_.replaceAll("[^A-Za-z\\s]*","")).flatMap(_.split("\\s+")).map((_,1)).reduceByKey(_+_)[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
