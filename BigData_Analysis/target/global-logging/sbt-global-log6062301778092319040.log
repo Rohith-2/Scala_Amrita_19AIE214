@@ -4,7 +4,7 @@
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(Test/compile, None, Some(CommandSource(network-1)))[0m
 [0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing"})[0m
 [0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / compile[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@365bfc5f, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@16c6d5a2, check cycles: false, forcegc: true[0m
 [0m[[0m[0minfo[0m] [0m[0mUpdating [0m
 [0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"Updating "})[0m
 [0m[[0m[0minfo[0m] [0m[0mResolved  dependencies[0m
@@ -54,7 +54,6 @@
 [0m[[0m[31merror[0m] [0m[0m  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml[0m
 [0m[[0m[31merror[0m] [0m[0m  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom[0m
 [0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"(\u001b[31mupdate\u001b[0m) sbt.librarymanagement.ResolveException: Error downloading org.apache.spark:spark-sql_2.12:3.1.1-preview2\n  Not found\n  Not found\n  not found: /Users/rohith/.ivy2/localorg.apache.spark/spark-sql_2.12/3.1.1-preview2/ivys/ivy.xml\n  not found: https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.12/3.1.1-preview2/spark-sql_2.12-3.1.1-preview2.pom"})[0m
-[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed 23 Mar, 2021 6:26:38 PM[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed 23 Mar, 2021 6:35:35 PM[0m
 [0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Done"})[0m
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
-[0m[[0m[0mdebug[0m] [0m[0mUnhandled notification received: $/setTraceNotification: JsonRpcNotificationMessage(2.0, $/setTraceNotification, {"value":"off"})[0m
