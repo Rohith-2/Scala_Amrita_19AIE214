@@ -1,0 +1,6 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "python.pythonPath": "/opt/miniconda3/bin/python"
+}

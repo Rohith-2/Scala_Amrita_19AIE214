@@ -19,10 +19,8 @@ val infyList = stckReduceRdd.lookup("INFY")(0).sortBy(_._2)
 val tcsRdd = sc.parallelize(tcsList).zipWithIndex.map(p => (p._2,p._1))
 val infyRdd = sc.parallelize(infyList).zipWithIndex.map(p => (p._2,p._1))
 
-val tcsInfyRdd = tcsRdd join infyRdd
-
 val tcsInfyRdd = (tcsRdd join infyRdd).map{case(i,((tcspr,x),(infypr,y))) =>(tcspr,infypr)}
 
-var file = new java.io.PrintStream("tcsInfyList.csv")
+file = new java.io.PrintStream("tcsInfyList.csv")
 tcsInfyRdd.collect.foreach{file.println(_)}
 file.close

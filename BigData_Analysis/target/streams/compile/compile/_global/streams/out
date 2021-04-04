@@ -1,0 +1,70 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:1:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval nseRdd = sc.textFile("nsesample.txt") [0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:2:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval nseSchemaRdd = nseRdd.map{l=>[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:6:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval stckReduceRdd = nseSchemaRdd.map{case (ds,ts,id,stck,pr,vol) => [0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:9:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mstckReduceRdd.toDF.show[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:10:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mstckReduceRdd.map{case(stck, list) => (stck,list.length)}.toDF("Stock","Number of Trades").show[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:12:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval tcsList = stckReduceRdd.lookup("TCS")(0).sortBy(_._2)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:14:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mvar file = new java.io.PrintStream("tcsList.csv")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:15:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mtcsList.foreach{file.println(_)}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:16:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mfile.close[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:18:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval infyList = stckReduceRdd.lookup("INFY")(0).sortBy(_._2)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:19:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval tcsRdd = sc.parallelize(tcsList).zipWithIndex.map(p => (p._2,p._1))[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:20:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval infyRdd = sc.parallelize(infyList).zipWithIndex.map(p => (p._2,p._1))[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:22:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval tcsInfyRdd = (tcsRdd join infyRdd).map{case(i,((tcspr,x),(infypr,y))) =>(tcspr,infypr)}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:24:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mfile = new java.io.PrintStream("tcsInfyList.csv")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:25:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mtcsInfyRdd.collect.foreach{file.println(_)}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/StockMarket_Spark.scala:26:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mfile.close[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:1:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval wikiRdd = sc.textFile("wikisample.txt")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:2:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mwikiRdd.toDF.show[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:3:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval wordRdd = wikiRdd.flatMap{l=> l.split("\\s+")}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:4:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval wordPairRdd = wordRdd.map(w => (w,1)) //convertig to tuple[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:5:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval wordRedPairRdd = wordPairRdd.reduceByKey(_+_)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:6:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mwordRedPairRdd.toDF.show[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/rohith/git/19AIE214-BDA/BigData_Analysis/TextAnalysis_Spark.scala:7:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval cat = sc.textFile("wikisample.txt").map(_.replaceAll("[^A-Za-z\\s]*","")).flatMap(_.split("\\s+")).map((_,1)).reduceByKey(_+_)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m23 errors found[0m

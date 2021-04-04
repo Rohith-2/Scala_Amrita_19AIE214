@@ -1,0 +1,4 @@
+[debug] [bigdata_analysis-test] Classpath dependencies List()
+[debug] [bigdata_analysis-test] Dependencies from configurations List(bigdata_analysis)
+[debug] Bloop wrote the configuration of project 'bigdata_analysis-test' to '/Users/rohith/git/19AIE214-BDA/BigData_Analysis/.bloop/bigdata_analysis-test.json'
+[success] Generated .bloop/bigdata_analysis-test.json
